@@ -6,10 +6,10 @@ class CornellData:
         MOVIE_LINES_FIELDS = ['lineID', 'characterID', 'movieID', 'character', 'text']
         MOVIE_CONVERSATIONS_FIELDS = ['character1ID', 'character2ID', 'movieID', 'utteranceIDs']
 
-        self.lines = self.loadLines(dirName + '/movie_lines.txt', MOVIE_LINES_FIELDS)
-        self.conversations = self.loadConversations(dirName + '/movie_conversations.txt', MOVIE_CONVERSATIONS_FIELDS)
+        self.lines = self.loadLines(dirName + 'movie_lines.txt', MOVIE_LINES_FIELDS)
+        self.conversations = self.loadConversations(dirName + 'movie_conversations.txt', MOVIE_CONVERSATIONS_FIELDS)
 
-        print('Loaded: %d lines, %d conversations' % (len(self.lines), len(self.conversations)))
+        # print('Loaded: %d lines, %d conversations' % (len(self.lines), len(self.conversations)))
 
     def loadLines(self, fileName, fields):
         lines = {}
@@ -48,4 +48,6 @@ class CornellData:
 
         return conversations
 
+    def getConversations(self):
+        return self.conversations
 
